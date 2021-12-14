@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spawn Location
+  - Cannonball
+  - Black
+  - Blue
+  - Green
+  - Red
+  - Yellow
+  - Bottom Ammo Border
   layers:
   - Default
   - TransparentFX
