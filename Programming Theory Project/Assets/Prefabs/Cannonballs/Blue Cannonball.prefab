@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 373484732958170947}
   - component: {fileID: 954008163806789393}
   - component: {fileID: 2494235088864471064}
-  - component: {fileID: -8589392309865192832}
+  - component: {fileID: -4164392802743368442}
   m_Layer: 0
   m_Name: Blue Cannonball
   m_TagString: Blue
@@ -113,7 +113,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &-8589392309865192832
+--- !u!114 &-4164392802743368442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,12 +122,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1643674902881377686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 703a4bcc152f85a4b8061a11e2be8c9e, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d73e054716d55f41b871faa4959f0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inCannon: 0
   inTube: 0
   nextInLine: 0
   inTransit: 0
+  Frozen: 0
   cannonballSpawnLoc: {fileID: 0}
   cannonPower: 10
+  explosion: {fileID: 0}

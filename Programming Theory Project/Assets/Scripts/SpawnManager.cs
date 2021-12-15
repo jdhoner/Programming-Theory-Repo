@@ -29,7 +29,10 @@ public class SpawnManager : MonoBehaviour
         // For each spawn location in scene, spawn a ball
         foreach(GameObject spawnPos in GameObject.FindGameObjectsWithTag("Spawn Location"))
         {
-            Instantiate(ballPrefab[RandomCannonball()], spawnPos.transform.position, spawnPos.transform.rotation);
+            GameObject ball = Instantiate(ballPrefab[RandomCannonball()], spawnPos.transform.position, spawnPos.transform.rotation);
+            ball.transform.parent = spawnPos.transform;
+            // assign each ballPrefab with a number correlating to the specific spawnPos
+            // assign each spawnPos as a true bool while a ballPrefab is there
         }
 
         // put first cannonball in cannon
@@ -51,7 +54,7 @@ public class SpawnManager : MonoBehaviour
         startingCannonball.GetComponent<ShootCannon>().inCannon = true;
     }
 
-    private int RandomCannonball()
+    public int RandomCannonball()
     {
         int spawnedCannonball = Random.Range(0, cannonballPrefab.Length);
 

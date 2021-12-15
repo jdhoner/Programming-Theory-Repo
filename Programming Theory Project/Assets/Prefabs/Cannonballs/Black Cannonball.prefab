@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3896478339402210909}
   - component: {fileID: 6926643848517350689}
   - component: {fileID: 7226549725245251373}
-  - component: {fileID: 1215061135266250426}
+  - component: {fileID: -7587597300211829341}
   m_Layer: 0
   m_Name: Black Cannonball
   m_TagString: Black
@@ -113,7 +113,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1215061135266250426
+--- !u!114 &-7587597300211829341
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,12 +122,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3490147256703235301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 703a4bcc152f85a4b8061a11e2be8c9e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5acb723dbbb16ed4a858f362738656e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inCannon: 0
   inTube: 0
   nextInLine: 0
   inTransit: 0
+  Frozen: 0
   cannonballSpawnLoc: {fileID: 0}
   cannonPower: 10
+  playboxBackground: {fileID: 0}

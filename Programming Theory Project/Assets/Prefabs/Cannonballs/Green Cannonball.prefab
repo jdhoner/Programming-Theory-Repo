@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2921655615534636663}
   - component: {fileID: 7396521759124774616}
   - component: {fileID: -895003541262279777}
-  - component: {fileID: -3517734105982222386}
+  - component: {fileID: 8949112573325997649}
   m_Layer: 0
   m_Name: Green Cannonball
   m_TagString: Green
@@ -113,7 +113,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &-3517734105982222386
+--- !u!114 &8949112573325997649
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,12 +122,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2773977825937752762}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 703a4bcc152f85a4b8061a11e2be8c9e, type: 3}
+  m_Script: {fileID: 11500000, guid: 863a85629fb9f944cb84ce5cc0cc413c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inCannon: 0
   inTube: 0
   nextInLine: 0
   inTransit: 0
+  Frozen: 0
   cannonballSpawnLoc: {fileID: 0}
   cannonPower: 10

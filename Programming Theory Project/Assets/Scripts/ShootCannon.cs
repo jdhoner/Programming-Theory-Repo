@@ -10,12 +10,13 @@ public class ShootCannon : MonoBehaviour
     public bool inTransit;
     public bool Frozen;
     public GameObject cannonballSpawnLoc;
+    public GameObject collidedBall;
     private Rigidbody rb;
     private SpawnManager spawnManager;
-    public float cannonPower;
+    public float cannonPower = 10f;
 
     // Start is called before the first frame update
-    void Awake()
+    public virtual void  Awake()
     {
         cannonballSpawnLoc = GameObject.Find("Cannonball Spawn");
         rb = GetComponent<Rigidbody>();
@@ -55,29 +56,16 @@ public class ShootCannon : MonoBehaviour
     {
         if (!inTube)
         {
+            collidedBall = collision.gameObject;
+
             // if this object hits another object with the same colour tag AND this object is not frozen
             if (collision.collider.tag == this.tag&&!Frozen)
             {
-                Destroy(collision.gameObject);
-                Destroy(gameObject);
-
-                // don't trigger RefreshCannonball twice
-
-                spawnManager.RefreshCannonball();
-                Debug.Log("Refreshing Cannonball due to correct colour match");
+                MatchedCollision();
             }
             else if(!Frozen) // if this object hits another object with a different colour tag AND this object is not frozen
             {
-                transform.position = new Vector3(transform.position.x,transform.position.y,-0.5f);
-                rb.constraints = RigidbodyConstraints.FreezePosition;
-
-                //if (collision.collider.GetType().FullName == "ShootCannon")
-                
-                    spawnManager.RefreshCannonball();
-                    Debug.Log("Refreshing Cannonball due to INCORRECT colour match");
-
-                Frozen = true;
-
+                UnmatchedCollision();
             }
         }
        
@@ -87,7 +75,7 @@ public class ShootCannon : MonoBehaviour
         }
     }
 
-    void Fire()
+    public virtual void Fire()
     {
         inCannon = false;
         rb.velocity = new Vector3(0, 0, 0);
@@ -96,5 +84,24 @@ public class ShootCannon : MonoBehaviour
         transform.localScale = Vector3.one;
         Debug.Log(rb.velocity);
 
+    }
+
+    public virtual void MatchedCollision()
+    {
+        Destroy(gameObject);
+        Destroy(collidedBall);
+        spawnManager.RefreshCannonball();
+        Debug.Log("Refreshing Cannonball due to correct colour match");
+    }
+
+    public virtual void UnmatchedCollision()
+    {
+        Frozen = true;
+        transform.position = new Vector3(transform.position.x, transform.position.y, -0.5f);
+        rb.constraints = RigidbodyConstraints.FreezePosition;
+
+
+        spawnManager.RefreshCannonball();
+        Debug.Log("Refreshing Cannonball due to INCORRECT colour match");
     }
 }

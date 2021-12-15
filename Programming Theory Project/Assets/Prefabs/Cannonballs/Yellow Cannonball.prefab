@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8683585052323396389}
   - component: {fileID: 7617909063982428464}
   - component: {fileID: 8280363232476348696}
-  - component: {fileID: 4506517862672746594}
+  - component: {fileID: -558588660382759079}
   m_Layer: 0
   m_Name: Yellow Cannonball
   m_TagString: Yellow
@@ -113,7 +113,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &4506517862672746594
+--- !u!114 &-558588660382759079
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,5 +129,6 @@ MonoBehaviour:
   inTube: 0
   nextInLine: 0
   inTransit: 0
+  Frozen: 0
   cannonballSpawnLoc: {fileID: 0}
   cannonPower: 10

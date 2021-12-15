@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4614377739864770142}
   - component: {fileID: 4682899417781020433}
   - component: {fileID: 6817801079017128084}
-  - component: {fileID: 6480414329213605802}
+  - component: {fileID: -7134033358654717068}
   m_Layer: 0
   m_Name: Red Cannonball
   m_TagString: Red
@@ -113,7 +113,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &6480414329213605802
+--- !u!114 &-7134033358654717068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,12 +122,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3480154301394437836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 703a4bcc152f85a4b8061a11e2be8c9e, type: 3}
+  m_Script: {fileID: 11500000, guid: ca066ddb3b767e845836109135387e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inCannon: 0
   inTube: 0
   nextInLine: 0
   inTransit: 0
+  Frozen: 0
   cannonballSpawnLoc: {fileID: 0}
   cannonPower: 10
+  spawnManager: {fileID: 0}
