@@ -17,6 +17,6 @@ public class StartScene : MonoBehaviour
 
     public void LoadCredits()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 }
