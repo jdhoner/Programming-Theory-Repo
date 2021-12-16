@@ -782,8 +782,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294856826}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.19, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.59, z: 0.8}
+  m_LocalPosition: {x: 0, y: -0.19000006, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.5899999, z: 0.8}
   m_Children:
   - {fileID: 2039796878}
   m_Father: {fileID: 1505138149}
@@ -1822,7 +1822,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d776d086b66c3849b9ad3fbf1177f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStart: 0
   ballPrefab:
   - {fileID: 3711833549260215388, guid: 6b7084defc3d1ab46bd4217e6120c583, type: 3}
   - {fileID: 1030907976662748909, guid: 04cc13a1b8fc4f348889a9611208c27a, type: 3}
