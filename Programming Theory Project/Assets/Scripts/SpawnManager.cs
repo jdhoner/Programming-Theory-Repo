@@ -28,7 +28,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-
+    // ABSTRACTION
     public void SpawnBalls() //Called using button
     {
         // For each spawn location in scene, spawn a ball
@@ -46,11 +46,13 @@ public class SpawnManager : MonoBehaviour
         startButton.SetActive(false);
     }
 
+    // ABSTRACTION
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    // ABSTRACTION
     void StartCannon()
     {
         
@@ -59,6 +61,7 @@ public class SpawnManager : MonoBehaviour
         startingCannonball.GetComponent<ShootCannon>().inCannon = true;
     }
 
+    // ABSTRACTION
     public int RandomCannonball()
     {
         int spawnedCannonball = Random.Range(0, cannonballPrefab.Length);
@@ -66,7 +69,8 @@ public class SpawnManager : MonoBehaviour
         return spawnedCannonball;
     }
 
-   IEnumerator SpawnCannonballs()
+    // ABSTRACTION
+    IEnumerator SpawnCannonballs()
     {
         for(int i=0; i< 4; i++)
         {
@@ -80,11 +84,13 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+    // ABSTRACTION
     public void RefreshCannonball()
     {
         StartCoroutine(FreshCannonball());
     }
 
+    // ABSTRACTION
     IEnumerator FreshCannonball()
     {
         yield return new WaitForSeconds(0.75f);
@@ -113,6 +119,7 @@ public class SpawnManager : MonoBehaviour
 
     }
 
+    // ABSTRACTION
     IEnumerator NewCannonBall()
     {
         newCannonBall = false;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RedCannonBalls : ShootCannon
+public class RedCannonBalls : ShootCannon //INHERITANCE
 {
 
 
@@ -15,6 +15,7 @@ public class RedCannonBalls : ShootCannon
     {
         base.MatchedCollision();
 
+        //POLYMORPHISM
 
         // trigger SpawnManager function that respawns balls in active spawnPos
         foreach (GameObject spawnPos in GameObject.FindGameObjectsWithTag("Spawn Location"))

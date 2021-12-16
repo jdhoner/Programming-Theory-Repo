@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlackCannonBalls : ShootCannon
+public class BlackCannonBalls : ShootCannon//INHERITANCE
 {
     [SerializeField] GameObject playboxBackground;
     private Material playboxMat;
@@ -10,7 +10,9 @@ public class BlackCannonBalls : ShootCannon
     [SerializeField] Color colourTwo;
 
     public override void Awake()
+        //POLYMORPHISM
     {
+        //POLYMORPHISM
         base.Awake();
         playboxBackground = GameObject.Find("Playbox Back");
         playboxMat = playboxBackground.GetComponent<MeshRenderer>().material;
@@ -20,6 +22,7 @@ public class BlackCannonBalls : ShootCannon
     }
     public override void UnmatchedCollision()
     {
+        //POLYMORPHISM
         float startTime = 0;
         float t = startTime + Time.deltaTime;
         playboxMat.color = Color.Lerp(colourOne, colourTwo,t);

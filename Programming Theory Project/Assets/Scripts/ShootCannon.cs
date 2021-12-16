@@ -11,8 +11,8 @@ public class ShootCannon : MonoBehaviour
     public bool Frozen;
 
     [SerializeField] GameObject cannonballSpawnLoc;
-    public SpawnManager spawnManager { get; private set; }
-    public GameObject collidedBall {get; private set; }
+    public SpawnManager spawnManager { get; private set; } //ENCAPSULATION
+    public GameObject collidedBall {get; private set; } //ENCAPSULATION
     private Rigidbody rb;
     [SerializeField] float cannonPower = 10f;
 
@@ -76,6 +76,7 @@ public class ShootCannon : MonoBehaviour
         }
     }
 
+    // ABSTRACTION
     public virtual void Fire()
     {
         inCannon = false;
@@ -87,6 +88,7 @@ public class ShootCannon : MonoBehaviour
 
     }
 
+    // ABSTRACTION
     public virtual void MatchedCollision()
     {
        
@@ -100,6 +102,7 @@ public class ShootCannon : MonoBehaviour
 
     }
 
+    // ABSTRACTION
     public virtual void UnmatchedCollision()
     {
         
