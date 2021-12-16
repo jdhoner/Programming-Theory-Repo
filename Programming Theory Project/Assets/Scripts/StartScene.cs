@@ -15,4 +15,8 @@ public class StartScene : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene(3);
+    }
 }
