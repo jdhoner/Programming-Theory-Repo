@@ -9,4 +9,10 @@ public class StartScene : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 }
