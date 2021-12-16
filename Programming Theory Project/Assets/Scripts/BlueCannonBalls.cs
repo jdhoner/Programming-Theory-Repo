@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlueCannonBalls : ShootCannon
 {
-    public ParticleSystem explosion;
+    [SerializeField] ParticleSystem explosion;
     public override void MatchedCollision()
     {
         // play explosion particle

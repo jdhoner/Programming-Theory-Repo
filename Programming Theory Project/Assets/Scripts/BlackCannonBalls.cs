@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BlackCannonBalls : ShootCannon
 {
-    public GameObject playboxBackground;
+    [SerializeField] GameObject playboxBackground;
     private Material playboxMat;
-    public Color colourOne;
-    public Color colourTwo;
+    [SerializeField] Color colourOne;
+    [SerializeField] Color colourTwo;
 
     public override void Awake()
     {

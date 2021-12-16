@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class SpawnManager : MonoBehaviour
 {
-    public bool gameStart;
+    private bool gameStart;
+    private bool newCannonBall;
     public GameObject[] ballPrefab;
-    public GameObject[] cannonballPrefab;
-    public GameObject startButton;
+    [SerializeField]GameObject[] cannonballPrefab;
+    [SerializeField] GameObject startButton;
     private Vector3 cannonballSpawn = new Vector3(0, -3.7f, -0.25f);
     private Vector3 cannonballAmmo = new Vector3(10f, -1f, 0);
 
@@ -16,13 +17,17 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         gameStart = false;
+        newCannonBall = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        if (newCannonBall)
+        {
+            StartCoroutine(NewCannonBall());
+        }
     }
+
 
     public void SpawnBalls() //Called using button
     {
@@ -104,9 +109,15 @@ public class SpawnManager : MonoBehaviour
                 cannonball.inTransit = false;
             }
         }
+        newCannonBall = true;
+
+    }
+
+    IEnumerator NewCannonBall()
+    {
+        newCannonBall = false;
         yield return new WaitForSeconds(0.75f);
         Instantiate(cannonballPrefab[RandomCannonball()], cannonballAmmo, transform.rotation);
-
     }
 
 }

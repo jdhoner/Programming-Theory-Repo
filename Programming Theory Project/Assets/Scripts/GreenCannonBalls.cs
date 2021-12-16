@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GreenCannonBalls : ShootCannon
 {
-    public AudioSource sound;
-    public GameObject cam;
+    [SerializeField] AudioSource sound;
+    [SerializeField] GameObject cam;
 
     public override void MatchedCollision()
     {

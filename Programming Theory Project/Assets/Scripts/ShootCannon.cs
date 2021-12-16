@@ -9,11 +9,12 @@ public class ShootCannon : MonoBehaviour
     public bool nextInLine;
     public bool inTransit;
     public bool Frozen;
-    public GameObject cannonballSpawnLoc;
-    public GameObject collidedBall;
+
+    [SerializeField] GameObject cannonballSpawnLoc;
+    public SpawnManager spawnManager { get; private set; }
+    public GameObject collidedBall {get; private set; }
     private Rigidbody rb;
-    private SpawnManager spawnManager;
-    public float cannonPower = 10f;
+    [SerializeField] float cannonPower = 10f;
 
     // Start is called before the first frame update
     public virtual void  Awake()
@@ -88,20 +89,29 @@ public class ShootCannon : MonoBehaviour
 
     public virtual void MatchedCollision()
     {
-        Destroy(gameObject);
-        Destroy(collidedBall);
-        spawnManager.RefreshCannonball();
-        Debug.Log("Refreshing Cannonball due to correct colour match");
+       
+        
+            Destroy(collidedBall);
+            spawnManager.RefreshCannonball();
+            Debug.Log("Refreshing Cannonball due to correct colour match");
+            Destroy(gameObject);
+
+        
+
     }
 
     public virtual void UnmatchedCollision()
     {
-        Frozen = true;
-        transform.position = new Vector3(transform.position.x, transform.position.y, -0.5f);
-        rb.constraints = RigidbodyConstraints.FreezePosition;
+        
+        
+            Frozen = true;
+            transform.position = new Vector3(transform.position.x, transform.position.y, -0.5f);
+            rb.constraints = RigidbodyConstraints.FreezePosition;
 
 
-        spawnManager.RefreshCannonball();
-        Debug.Log("Refreshing Cannonball due to INCORRECT colour match");
+            spawnManager.RefreshCannonball();
+            Debug.Log("Refreshing Cannonball due to INCORRECT colour match");
+        
+
     }
 }

@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class RedCannonBalls : ShootCannon
 {
-    public SpawnManager spawnManager;
 
 
     public override void Awake()
     {
         base.Awake();
-        spawnManager = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
     }
 
     public override void MatchedCollision()
